@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/yit8fla.css">
+    <title>Dialog Box Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dialog-container {
+            text-align: center;
+            position: relative;
+            left: -500px;
+            width: 5000px;
+        }
+
+        .dialog {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 5000px; 
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px; 
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .error-dialog {
+            color: #ff0000;
+            font-weight: bold;
+            margin-top: 15px; 
+        }
+
+        .song-recommendation {
+            margin-top: 20px;
+            font-weight: bold;
+            position: relative;
+            top: -250px;
+            left: 250px;
+            font-family: "good-times", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            font-size: 400%;
+            color: green;
+        }
+
+        .dbs {
+            position: relative;
+            left: -200px;
+            top: 200px;
+            font-size: 160%;
+            text-align: left;
+        }
+        .back{
+            font-family: "indivisible", sans-serif;
+    font-weight: 700;
+    font-style: italic; 
+    color:  green;
+            position: relative;
+            top: -370px;
+            left: 10px;
+
+        }
+        .next{
+            font-family: "indivisible", sans-serif;
+    font-weight: 700;
+    font-style: italic; 
+    color: green;
+            position: relative;
+            top: -370px;
+            left: 1400px;
+        }
+  
+      
+    </style>
+</head>
+<body>
+<a href="#" class="back"> BACK</a>
+<a href="#" class="next"> NEXT</a>
+
+<div class="song-recommendation">
+    GIVE ME YOUR SONG RECOMMENDATIONS!
+</div>
+<div class="dbs">
+ don't be shy, I wont judge...
+</div>
+
+<div class="dialog-container">
+    <div class="dialog" id="dialog">
+        <div class="input-group">
+            <input type="text" id="userInput" placeholder="Type here...">
+        </div>
+        <button class="btn" onclick="submitForm()">Submit</button>
+        <div class="error-dialog" id="errorDialog"></div>
+    </div>
+</div>
+
+<script>
+    function submitForm() {
+        var userInput = document.getElementById('userInput').value;
+        var errorDialog = document.getElementById('errorDialog');
+
+        if (userInput.trim() === '') {
+            errorDialog.textContent = 'Error: Please enter something!';
+            errorDialog.style.display = 'block';
+        } else {
+            // Reset error dialog
+            errorDialog.textContent = '';
+            errorDialog.style.display = 'none';
+
+            // Show error message in separate alert box
+            alert('Oops! Sorry, I judged...');
+        }
+    }
+</script>
+
+</body>
+</html>
